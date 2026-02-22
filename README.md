@@ -13,7 +13,7 @@
 
 | Latest Stable Release | Latest Nightly Relase | Upstream URL |
 | :---: | :---: | :---: |
-| [Click here](https://github.com/pkgforge-dev/Neverball-AppImage/releases/latest) | [Click here](https://github.com/pkgforge-dev//Neverball-AppImage/releases/tag/nightly) | [Click here](https://github.com/Neverball/neverball) |
+| [Click here](https://github.com/pkgforge-dev/Neverball-AppImage/releases/latest) | [Click here](https://github.com/pkgforge-dev/Neverball-AppImage/releases/tag/nightly) | [Click here](https://github.com/Neverball/neverball) |
 
 </div>
 
