@@ -21,5 +21,5 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
 else
     package=neverball
 fi
-make-aur-package "$package"
+PRE_BUILD_CMDS='sed -i "s/libjpeg/&.so/g" ./PKGBUILD' make-aur-package "$package"
 pacman -Q "$package" | awk '{print $2; exit}' > ~/version
