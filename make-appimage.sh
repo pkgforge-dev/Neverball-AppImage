@@ -10,7 +10,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/256x256/apps/neverball.png
 export DESKTOP=/usr/share/applications/neverball.desktop
 export STARTUPWMCLASS=neverball
-export USE_HOST_DRIVERS_EXPERIMENTAL=1
+export DEPLOY_OPENGL=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/neverball /usr/bin/neverputt /usr/bin/mapc
