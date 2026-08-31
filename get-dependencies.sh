@@ -44,3 +44,4 @@ echo "$VERSION" > ~/version
 mkdir -p ./AppDir/bin
 cd ./Neverball
 make -DNDEBUG -j$(nproc)
+mv -v neverball neverputt mapc locale data ../AppDir/bin
