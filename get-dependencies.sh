@@ -37,7 +37,7 @@ else
     echo "---------------------------------------------------------------"
     VERSION=1.6.0
     wget https://neverball.org/neverball-$VERSION.tar.gz
-    tar -xvf neverball-$VERSION.tar.gz -C ./Neverball
+    mkdir -p ./Neverball && tar -xvf neverball-$VERSION.tar.gz -C ./Neverball
 fi
 echo "$VERSION" > ~/version
 
