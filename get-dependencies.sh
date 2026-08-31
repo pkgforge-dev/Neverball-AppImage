@@ -43,7 +43,7 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./Neverball
-if [ "${DEVEL_RELEASE-}" = 0 ]; then
+if [ "${DEVEL_RELEASE-}" != 1 ]; then
     patch -Np1 ../patches/neverball-filesystem.patch
     patch -Np1 ../patches/neverball-gcc10.patch
 fi
