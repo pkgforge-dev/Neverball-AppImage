@@ -44,8 +44,8 @@ echo "$VERSION" > ~/version
 mkdir -p ./AppDir/bin
 cd ./Neverball
 if [ "${DEVEL_RELEASE-}" = 0 ]; then
-patch -Np1 ../neverball-filesystem.patch
-patch -Np1 ../neverball-gcc10.patch
+    patch -Np1 ../neverball-filesystem.patch
+    patch -Np1 ../neverball-gcc10.patch
 fi
 make -DNDEBUG -j$(nproc)
 mv -v neverball neverputt mapc locale data ../AppDir/bin
