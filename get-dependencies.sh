@@ -44,8 +44,9 @@ echo "$VERSION" > ~/version
 mkdir -p ./AppDir/bin
 cd ./Neverball
 if [ "${DEVEL_RELEASE-}" != 1 ]; then
-    patch -Np1 ../patches/neverball-filesystem.patch
-    patch -Np1 ../patches/neverball-gcc10.patch
+    sed -i 's/^char text_input\[MAXSTR\];/extern char text_input[MAXSTR];/' share/text.h
+    sed -i '/^ifeq ($(ENABLE_FS),stdio)/iENABLE_FS := stdio' Makefile
+    sed -i '/^else$/{ N; /\nFS_LIBS := -lphysfs/{ s/^else\n/endif\nifeq ($(ENABLE_FS),physfs)\n/ } }' Makefile
 fi
-make CPPFLAGS="${CPPFLAGS:-} -DNDEBUG" CFLAGS="${CFLAGS:-}" -j$(nproc)
+make CPPFLAGS="${CPPFLAGS:-} -DNDEBUG" CFLAGS="${CFLAGS:-} -fcommon" -j$(nproc)
 mv -v neverball neverputt mapc locale data ../AppDir/bin
