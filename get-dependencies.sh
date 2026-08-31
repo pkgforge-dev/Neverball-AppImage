@@ -42,3 +42,5 @@ fi
 echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
+cd ./Neverball
+make -DNDEBUG -j$(nproc)
