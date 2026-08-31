@@ -47,5 +47,5 @@ if [ "${DEVEL_RELEASE-}" = 0 ]; then
     patch -Np1 ../patches/neverball-filesystem.patch
     patch -Np1 ../patches/neverball-gcc10.patch
 fi
-make CPPFLAGS="${CPPFLAGS:-} -DNDEBUG" -j$(nproc)
+make CPPFLAGS="${CPPFLAGS:-} -DNDEBUG" CFLAGS="${CFLAGS:-}" -j$(nproc)
 mv -v neverball neverputt mapc locale data ../AppDir/bin
