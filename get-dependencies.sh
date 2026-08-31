@@ -36,8 +36,8 @@ else
     echo "Making stable build of Neverball..."
     echo "---------------------------------------------------------------"
     VERSION=1.6.0
-    wget https://neverball.org/neverball-1.6.0.tar.gz
-    tar -xvf neverball-1.6.0.tar.gz -C ./Neverball
+    wget https://neverball.org/neverball-$VERSION.tar.gz
+    tar -xvf neverball-$VERSION.tar.gz -C ./Neverball
 fi
 echo "$VERSION" > ~/version
 
