@@ -13,7 +13,7 @@ export STARTUPWMCLASS=neverball
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/neverball /usr/bin/neverputt /usr/bin/mapc
+quick-sharun ./AppDir/bin/neverball ./AppDir/bin/neverputt ./AppDir/bin/mapc
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
