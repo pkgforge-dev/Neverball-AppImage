@@ -1,0 +1,36 @@
+From 272798568eca608ea8b371fad1dc9998fc06b53d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?J=C4=81nis=20R=C5=ABcis?= <parasti@gmail.com>
+Date: Tue, 9 May 2017 18:08:09 +0300
+Subject: [PATCH] Default to the stdio filesystem backend
+
+---
+ Makefile | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index c84177cec..913aef824 100644
+--- a/Makefile
++++ b/Makefile
+@@ -135,9 +135,11 @@ ALL_CPPFLAGS += $(HMD_CPPFLAGS)
+ SDL_LIBS := $(shell sdl2-config --libs)
+ PNG_LIBS := $(shell libpng-config --libs)
+ 
++ENABLE_FS := stdio
+ ifeq ($(ENABLE_FS),stdio)
+ FS_LIBS :=
+-else
++endif
++ifeq ($(ENABLE_FS),physfs)
+ FS_LIBS := -lphysfs
+ endif
+ 
+@@ -355,7 +357,8 @@ ifeq ($(ENABLE_FS),stdio)
+ BALL_OBJS += share/fs_stdio.o
+ PUTT_OBJS += share/fs_stdio.o
+ MAPC_OBJS += share/fs_stdio.o
+-else
++endif
++ifeq ($(ENABLE_FS),physfs)
+ BALL_OBJS += share/fs_physfs.o
+ PUTT_OBJS += share/fs_physfs.o
+ MAPC_OBJS += share/fs_physfs.o
