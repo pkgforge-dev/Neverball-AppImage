@@ -46,7 +46,6 @@ cd ./Neverball
 if [ "${DEVEL_RELEASE-}" != 1 ]; then
     sed -i 's/^char text_input\[MAXSTR\];/extern char text_input[MAXSTR];/' share/text.h
     sed -i '/^ifeq ($(ENABLE_FS),stdio)/iENABLE_FS := stdio' Makefile
-    sed -i '/^else$/{ N; /\nFS_LIBS := -lphysfs/{ s/^else\n/endif\nifeq ($(ENABLE_FS),physfs)\n/ } }' Makefile
 fi
 make CPPFLAGS="${CPPFLAGS:-} -DNDEBUG" CFLAGS="${CFLAGS:-} -fcommon" -j$(nproc)
 mv -v neverball neverputt mapc locale data ../AppDir/bin
