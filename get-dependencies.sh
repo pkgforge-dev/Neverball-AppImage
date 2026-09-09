@@ -22,7 +22,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of Neverball..."
     echo "---------------------------------------------------------------"
     VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
-    git clone "$REPO" ./Neverball
+    git clone --depth 1 "$REPO" ./Neverball
 else
     echo "Making stable build of Neverball..."
     echo "---------------------------------------------------------------"
