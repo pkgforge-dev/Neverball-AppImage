@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm physfs sdl2_ttf xdg-utils
+pacman -Syu --noconfirm libjpeg-turbo physfs sdl2_ttf xdg-utils
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
